@@ -14,6 +14,13 @@ import { LinearGradient, Constants } from 'expo';
 const window = Dimensions.get('window');
 const statusBarHeight = Constants.statusBarHeight;
 const headerHeight = 56;
+const iconSize = 50;
+
+// customIcon
+// import CustomIconExample from './customIcon.js';
+
+// WBIcon
+import WBIcon from '../WBIcon/index.js';
 
 import left from '../assets/left.png';
 import right from '../assets/right.png';
@@ -52,7 +59,7 @@ export default class Menu1 extends Component {
 
             {/* title */}
             <View style={{ flex: 2 }}>
-              <Text style={{ color: 'white', fontSize: 18, textAlign: 'center' }}>WBM Agent</Text>
+              <Text style={{ color: 'white', fontSize: 18, textAlign: 'center' }}>ភ្នាក់ងារអង្គភាពរដ្ឋាករទឹក</Text>
             </View>
 
 
@@ -67,74 +74,189 @@ export default class Menu1 extends Component {
 
           <View style={{ flex: 2 }}>
 
-            <View style={{ flex: 1, flexDirection: 'row' }}>
-              <View style={{ flex: 1, flexDirection: 'column' }}>
-                <View style={[, { flex: 1, }]}>
-                  <TouchableOpacity>
-                    <View style={styles.dashboardContainer}>
-                      <Text>one</Text>
+            {/* first row */}
+            <View style={{
+              flex: 1, flexDirection: 'row',
+              // marginTop: 20,
+              // marginLeft: 20,
+              // marginRight: 20
+            }}>
+
+              {/* first row, first column */}
+              <View style={{
+                flex: 1,
+                borderRightColor: 'rgba(68, 160, 141,.9)',
+                borderRightWidth: 1,
+                borderBottomColor: 'rgba(68, 160, 141,.9)',
+                borderBottomWidth: 1,
+              }}>
+                <TouchableOpacity>
+                  <View style={styles.dashboardContainer}>
+                    <View>
+                      <WBIcon icon="payment" size={iconSize} />
                     </View>
-                  </TouchableOpacity>
-                </View>
-                <View style={{ height: 1, flexDirection: 'row' }}>
-                  <View style={{ flex: 1, flexDirection: 'column', alignItems: 'flex-end' }}>
-                    <Image source={line} style={{ width: '50%', height: 1 }} />
+                    <View>
+                      <Text style={styles.dasboardText}>ទូរទាត់ថ្លៃទឹក</Text>
+                    </View>
                   </View>
-                </View>
+                </TouchableOpacity>
               </View>
 
-              <View style={{ flex: 1, flexDirection: 'row' }}>
-                <View style={{ width: 1, }}>
-                  <Image source={line} style={{ height: '50%', top: '50%', width: 1 }} />
-                </View>
-                <View style={{ flex: 1 }}>
-                  <TouchableOpacity>
-                    <View style={styles.dashboardContainer}>
-                      <Text>one</Text>
+              {/* first row, second column */}
+              <View style={{
+                flex: 1,
+                borderBottomColor: 'rgba(68, 160, 141,.9)',
+                borderBottomWidth: 1,
+              }}>
+                <TouchableOpacity>
+                  <View style={styles.dashboardContainer}>
+                    <View>
+                      <WBIcon icon="balance" size={iconSize} />
                     </View>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-
-            <View style={{ flex: 1, flexDirection: 'row' }}>
-
-              <View style={{ flex: 1, flexDirection: 'row' }}>
-
-                <View style={{ flex: 1 }}>
-                  <TouchableOpacity>
-                    <View style={styles.dashboardContainer}>
-                      <Text>one</Text>
+                    <View>
+                      <Text style={styles.dasboardText}>សមតុល្យ</Text>
                     </View>
-                  </TouchableOpacity>
-                </View>
-                <View style={{ width: 1, }}>
-                  <Image source={line} style={{ width: 1 }} />
-                </View>
-              </View>
-
-              <View style={{ flex: 1, flexDirection: 'column' }}>
-                <View style={{ height: 1, flexDirection: 'row' }}>
-                  <View style={{ flex: 1, flexDirection: 'column' }}>
-                    <Image source={right} style={{ width: '90%', height: 1 }} />
                   </View>
-                </View>
-                <View style={[, { flex: 1, }]}>
-                  <TouchableOpacity>
-                    <View style={styles.dashboardContainer}>
-                      <Text>one</Text>
-                    </View>
-                  </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
+              </View>
+            </View>
 
+            {/* second row */}
+            <View style={{
+              flex: 1, flexDirection: 'row',
+              // marginLeft: 20,
+              // marginRight: 20
+            }}>
+
+              {/* second row, first column */}
+              <View style={{
+                flex: 1,
+                borderRightColor: 'rgba(68, 160, 141,.9)',
+                borderRightWidth: 1,
+                borderBottomColor: 'rgba(68, 160, 141,.9)',
+                borderBottomWidth: 1,
+              }}>
+                <TouchableOpacity>
+                  <View style={styles.dashboardContainer}>
+                    <View>
+                      <WBIcon icon="payment-history" size={iconSize} />
+                    </View>
+                    <View>
+                      <Text style={styles.dasboardText}>ប្រវត្តិនៃការប្រើប្រាស់</Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
               </View>
 
-
+              {/* second row, second column */}
+              <View style={{
+                flex: 1,
+                borderBottomColor: 'rgba(68, 160, 141,.9)',
+                borderBottomWidth: 1,
+              }}>
+                <TouchableOpacity>
+                  <View style={styles.dashboardContainer}>
+                    <View>
+                      <WBIcon icon="report" size={iconSize} />
+                    </View>
+                    <View>
+                      <Text style={styles.dasboardText}>របាយការណ៍</Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              </View>
             </View>
 
-            <View style={{ flex: 1, flexDirection: 'row' }}>
 
+            {/* third row */}
+            <View style={{
+              flex: 1, flexDirection: 'row',
+              borderBottomColor: 'rgba(68, 160, 141,.9)',
+              borderBottomWidth: 1,
+              // marginLeft: 20,
+              // marginRight: 20,
+              // marginBottom: 20
+            }}>
+
+              {/* third row, first column */}
+              <View style={{
+                flex: 1,
+                borderRightColor: 'rgba(68, 160, 141,.9)',
+                borderRightWidth: 1,
+              }}>
+                <TouchableOpacity>
+                  <View style={styles.dashboardContainer}>
+                    <View>
+                      <WBIcon icon="hand-payment" size={iconSize} />
+                    </View>
+                    <View>
+                      <Text style={styles.dasboardText}>ទូរទាត់រហ័ស</Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              </View>
+
+              {/* fourth row, second column */}
+              <View style={{
+                flex: 1,
+              }}>
+                <TouchableOpacity>
+                  <View style={styles.dashboardContainer}>
+                    <View>
+                      <WBIcon icon="profit" size={iconSize} />
+                    </View>
+                    <View>
+                      <Text style={styles.dasboardText}>ប្រាក់ចំណេញប្រចាំខែ</Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              </View>
             </View>
+
+            {/* third row */}
+            <View style={{
+              flex: 1, flexDirection: 'row',
+              // marginLeft: 20,
+              // marginRight: 20,
+              // marginBottom: 20
+            }}>
+
+              {/* third row, first column */}
+              <View style={{
+                flex: 1,
+                borderRightColor: 'rgba(68, 160, 141,.9)',
+                borderRightWidth: 1,
+              }}>
+                <TouchableOpacity>
+                  <View style={styles.dashboardContainer}>
+                    <View>
+                      <WBIcon icon="contact" size={iconSize} />
+                    </View>
+                    <View>
+                      <Text style={styles.dasboardText}>ទំនាក់ទំនង</Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              </View>
+
+              {/* third row, second column */}
+              <View style={{
+                flex: 1,
+              }}>
+                <TouchableOpacity>
+                  <View style={styles.dashboardContainer}>
+                    <View>
+                      <WBIcon icon="branch-location-03" size={iconSize} />
+                    </View>
+                    <View>
+                      <Text style={styles.dasboardText}>ទីតាំងសាខា</Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </View>
+
+
 
 
 
@@ -185,10 +307,15 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   dashboardContainer: {
-    backgroundColor: 'rgba(0,0,0,.1)',
+    // backgroundColor: 'rgba(255,255,255,.1)',
     // backgroundColor:'transparent',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%'
+  },
+  dasboardText: {
+    color: 'white',
+    fontSize: 16,
+    marginTop: 5
   }
 })
